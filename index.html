@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Page</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 22px;
+        }
+
+        header {
+            background: #000;
+            color: #f5f5f7;
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav a {
+            color: #f5f5f7;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #2997ff;
+        }
+
+        main {
+            padding: 40px 0;
+        }
+
+        section {
+            margin-bottom: 30px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        h1, h2 {
+            font-weight: 600;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 12px;
+            border: 1px solid #d2d2d7;
+            border-radius: 12px;
+            font-size: 16px;
+            width: calc(100% - 26px); /* Account for padding and border */
+        }
+
+        input[type="submit"] {
+            background-color: #007aff;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005ecb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #f5f5f7;
+            color: #6e6e73;
+            font-size: 12px;
+            border-top: 1px solid #d2d2d7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="home">
+                <h1>Welcome to Our Website</h1>
+                <p>Discover a new standard of web excellence, inspired by the best in design.</p>
+            </section>
+
+            <section id="about">
+                <h2>About Us</h2>
+                <p>We are a team of passionate developers and designers dedicated to creating beautiful, functional, and user-friendly web experiences.</p>
+            </section>
+
+            <section id="services">
+                <h2>Our Services</h2>
+                <ul>
+                    <li>Intuitive Web Design</li>
+                    <li>High-Performance Web Development</li>
+                    <li>Strategic SEO Optimization</li>
+                </ul>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
+                    <input type="submit" value="Send Message">
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            if (name) {
+                alert('Thank you for your message, ' + name + '!');
+                this.reset();
+            } else {
+                alert('Please enter your name.');
+            }
+        });
+    </script>
+</body>
+</html>
